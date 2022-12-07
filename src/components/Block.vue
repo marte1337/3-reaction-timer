@@ -15,7 +15,7 @@ export default {
     }
   },
   mounted() {
-    // "setTimeout" und "setInterval" sind von JS mitgelieferte Funktionen! 
+    // "setTimeout" und "setInterval" sind von JS mitgelieferte Funktionen. 
     setTimeout(() => {
       this.showBlock = true
       this.startTimer()
@@ -32,7 +32,8 @@ export default {
     },
     stopTimer() {
       clearInterval(this.timer)
-      console.log(this.reactionTime)
+      // Custom Event: "$emit" sendet reactionTime zu Parent
+      this.$emit("end", this.reactionTime)
     }
   },
 }
